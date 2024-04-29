@@ -1,0 +1,165 @@
+HashMap////
+
+import java.util.*;
+
+class Main{
+
+public static void main(String args[]){
+
+Scanner sc = new Scanner(System.in);
+
+int n = Integer.parseInt(sc.nextLine());
+
+Map<String, Integer> map = new HashMap<>();
+
+for(int i=0; i<n; i++){
+
+String arr[] = sc.nextLine().split(", ");
+
+String model = arr[0];
+
+int price = Integer.parseInt(arr[1]);
+
+map.put(model,price);
+
+}
+
+map.forEach((k,v)->System.out.println(k+" "+v));
+
+String search = sc.nextLine();
+
+System.out.println("Search what? - " + search);
+
+if(map.containsKey(search)){
+
+System.out.println(search + " " + map.get(search));
+
+}
+
+System.out.println("Size of HashMap: " + map.size());
+
+}
+
+
+
+
+// HashSet
+
+import java.util.*;
+
+class Main{
+
+public static void main(String args[]){
+
+Scanner sc = new Scanner(System.in);
+
+HashSet<String> hs= new HashSet<>();
+
+int n = Integer.parseInt(sc.nextLine());
+
+for(int i=0; i<n; i++){
+
+String model = sc.nextLine();
+
+hs.add(model);
+
+}
+
+hs.forEach((v)->System.out.println(v));
+
+String search = sc.nextLine();
+
+System.out.println("Search - " + search);
+
+if(hs.contains(search)){
+
+System.out.println("Found: " + search);
+
+}else{
+
+System.out.println(search + " not found.");
+
+}
+
+System.out.println("Size of HashSet: " + hs.size());
+
+String toRemove = sc.nextLine();
+
+if(hs.remove(toRemove)){
+
+System.out.println("Remove : " + toRemove);
+
+System.out.println("After removal: "+ hs.size());
+
+hs.forEach((v)->System.out.println(v));
+
+}else{
+
+System.out.println(toRemove + " not present.");
+
+System.out.println("After removal: " + hs.size());
+
+hs.forEach((v)->System.out.println(v));
+
+}
+
+}
+
+}
+// ArrayList
+
+import java.util.*;
+
+class Main{
+
+public static void main(String args[]){
+
+Scanner sc = new Scanner(System.in);
+
+int n = Integer.parseInt(sc.nextLine());
+
+ArrayList<String> al = new ArrayList<>();
+
+for(int i=0; i<n; i++){
+
+String model = sc.nextLine();
+
+al.add(model);
+
+}
+
+System.out.println("Size of ArrayList: " + al.size());
+
+al.forEach((a)->System.out.println(a));
+
+String update = sc.nextLine();
+
+int atIndex = Integer.parseInt(sc.nextLine());
+
+al.set(atIndex, update);
+
+System.out.println("Updated " + update + " at " + atIndex);
+
+System.out.println("After update: ");
+
+al.forEach((a)->System.out.println(a));
+
+String search = sc.nextLine();
+
+if(al.contains(search)){
+
+System.out.println(search + " found.");
+
+}else{
+
+System.out.println(search + " not found.");
+
+}
+
+int index = Integer.parseInt(sc.nextLine());
+
+System.out.println(index + " - " + al.get(index));
+
+}
+
+}
